@@ -87,10 +87,10 @@ class Vditor extends VditorMethod {
                         document.head.removeChild(el);
                     }
                 });
-                addScript(`${mergedOptions.cdn}/src/js/i18n/${mergedOptions.lang}.js`, i18nScriptID).then(() => {
+                addScript(`${mergedOptions.cdn}/dist/js/i18n/${mergedOptions.lang}.js`, i18nScriptID).then(() => {
                     this.init(id as HTMLElement, mergedOptions);
                 }).catch(error => {
-                    this.showErrorTip(`GET ${mergedOptions.cdn}/src/js/i18n/${mergedOptions.lang}.js net::ERR_ABORTED 404 (Not Found)`);
+                    this.showErrorTip(`GET ${mergedOptions.cdn}/dist/js/i18n/${mergedOptions.lang}.js net::ERR_ABORTED 404 (Not Found)`);
                 });
             }
         } else {
