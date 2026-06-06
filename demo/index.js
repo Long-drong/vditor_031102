@@ -53,7 +53,14 @@ const initVditor = (language) => {
         // _lutePath: `http://192.168.31.194:9090/lute.min.js?${new Date().getTime()}`,
         _lutePath: "src/js/lute/lute.min.js",
         cdn: "",
-        toolbar,
+        toolbar: [
+            'emoji', 'headings', 'bold', 'italic', 'strike', '|',
+            'line', 'quote', 'list', 'ordered-list', 'check', '|',
+            'code', 'inline-code', 'insert-after', 'insert-before', '|',
+            'upload', 'link', 'table', '|',
+            'undo', 'redo', '|',
+            'fullscreen', 'edit-mode', 'format' // 保留 edit-mode 允许偶尔切换回 Markdown 源码
+        ],
         lang: language,
         mode: "wysiwyg",
         height: window.innerHeight + 100,
@@ -134,7 +141,4 @@ const initVditor = (language) => {
     })
 }
 initVditor("zh_CN")
-window.setLang = (language) => {
-    window.vditor.destroy()
-    initVditor(language)
-}
+
